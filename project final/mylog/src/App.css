@@ -69,18 +69,34 @@
   width: 100%;
 }
 
-.brand-link {
-  width: 400px;
+.slide {
+  overflow: hidden;
+  font-size: 50px;
+  border: 1px solid;
+  justify-content: center;
 }
 
-.brand {
-  padding: 0%;
-  margin: 0%;
-  background-color: black;
-  display: flex;
-  width: 100%;
+.slick-slide {
+  display: inline-block;
+  z-index: 99;
+  border: 2px solid purple;
+}
+.slide-prev {
+  font-size: 50px;
+  justify-content: center;
+  margin-top: 50px;
+  left: 1%;
 
-  height: 200px;
+  position: absolute;
+
+  z-index: 1;
+}
+.slide-next {
+  font-size: 50px;
+  position: absolute;
+  right: 1%;
+  margin-top: 50px;
+  z-index: 99;
 }
 
 @media (min-width: 768px) {

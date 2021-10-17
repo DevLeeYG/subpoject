@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import Padding from './Components/Padding';
 import NavPad from './Components/NavPad';
 import Brand from './Components/Brand';
+import SimpleSlider from './Components/SimpleSlider';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <NavPad />
       <Home />
       <Brand />
+      {/* <SimpleSlider /> */}
     </div>
   );
 };

@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import corsair from '../Img/corsair.png';
 import logi from '../Img/logi.png';
 import razer from '../Img/razer.png';
 import roccat from '../Img/roccat.png';
+import Slider from 'react-slick';
+import '../App.css';
+import back from '../Img/back.png';
+
 import { MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md';
+
 console.log(MdArrowForwardIos);
 let dummyImage = [
   {
@@ -26,6 +31,7 @@ let dummyImage = [
 
 const Brand = () => {
   const [img, setIag] = useState(dummyImage);
+  const slider = useRef(null);
 
   const maps = img.map((el) => {
     return (
@@ -35,17 +41,33 @@ const Brand = () => {
     );
   });
 
+  const set = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+  };
+
   return (
-    <div className="brand">
-      <i className="before">
-        <MdArrowBackIos size="100"></MdArrowBackIos>
+    <div className="slide">
+      <i className="slide-prev" onClick={() => slider?.current?.slickPrev()}>
+        <MdArrowBackIos />
       </i>
-      {maps}
-      <i className="next">
-        <MdArrowForwardIos size="100"></MdArrowForwardIos>
+      <i className="slide-next" onClick={() => slider?.current?.slickPrev()}>
+        <MdArrowForwardIos />
       </i>
+      <Slider arrows={false} ref={slider} {...set}>
+        {maps}
+      </Slider>
     </div>
   );
 };
 
 export default Brand;
+
+{
+  /* <i className="before">
+        <MdArrowBackIos size="100"></MdArrowBackIos>
+      </i>
+       <i className="next">
+       <MdArrowForwardIos size="100"></MdArrowForwardIos>
+     </i> */
+}
